@@ -35,6 +35,28 @@ def sub(x, y):
     except ValueError:
         return "Invalid input. Please make sure both x and y are numbers."
 
+@app.route("/change/mul/<x>/<y>", methods=["GET"])
+def mul(x, y):
+    print("I am inside mul")
+    try:
+        num1 = int(x)
+        num2 = int(y)
+        result = num1 * num2
+        return str(result)
+    except ValueError:
+        return "Invalid input. Please make sure both x and y are numbers."
+
+@app.route("/change/div/<x>/<y>", methods=["GET"])
+def mul(x, y):
+    print("I am inside div")
+    try:
+        num1 = int(x)
+        num2 = int(y)
+        result = num1 / num2
+        return str(result)
+    except ValueError:
+        return "Invalid input. Please make sure both x and y are numbers."
+
 if __name__ == "__main__":
     # app.run (host= "0.0.0.0")
     app.run(debug=True)
